@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <form (ngSubmit)="onCreate()" *ngIf="form" [formGroup]="form">
+        <div class="row">
+          <app-control-container class="col-sm-4 col-md-4 col-lg-4"
+                                 errorMsg="Schedule name is a required field" label="Schedule Name"
+                                 name="name">
+            <dx-text-box formControlName="name" placeholder="Type Schedule name" id="schedule-name">
+            </dx-text-box>
+          </app-control-container>
+          <app-control-container class="col-sm-4 col-md-4 col-lg-4"
+                                 errorMsg="Start time is a required field" label="Start Time"
+                                 name="start_at">
+            <dx-date-box formControlName="start_at" placeholder="Select Schedule Start time" id="schedule-start-time" type="time">
+            </dx-date-box>
+          </app-control-container>
+          <app-control-container class="col-sm-4 col-md-4 col-lg-4"
+                                 errorMsg="Start time is a required field" label="End Time"
+                                 name="end_at">
+            <dx-date-box formControlName="end_at" placeholder="Select Schedule End time" id="schedule-end-time" type="time">
+            </dx-date-box>
+          </app-control-container>
+        </div>
+        <div class="row d-flex justify-content-center mt-4 mb-4">
+          <button class="btn btn-primary mr-2" type="submit">Submit</button>
+          <button class="btn btn-danger" type="button" (click)="clear()">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

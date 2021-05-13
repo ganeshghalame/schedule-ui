@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <dx-chart
+      id="service_type_bar"
+      palette="bright"
+      title="Schedule Report"
+      [dataSource]="schedules">
+      <dxo-legend
+        orientation="horizontal"
+        itemTextPosition="right"
+        horizontalAlignment="center"
+        verticalAlignment="bottom"
+        [columnCount]="4"></dxo-legend>
+      <dxo-export [enabled]="true"></dxo-export>
+      <dxi-series
+        argumentField="name"
+        valueField="duration"
+        type="bar" >
+      </dxi-series>
+    </dx-chart>
+  </div>
+</div>

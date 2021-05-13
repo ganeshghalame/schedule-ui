@@ -1,0 +1,15 @@
+<label *ngIf="label" [ngClass]="{ required: status && !control.disabled }">
+    {{ label }}
+</label>
+<div class="form-group">
+    <ng-content></ng-content>
+    <ng-container *ngIf="control.errors">
+      <div class="text-danger" *ngIf="
+                control.invalid &&
+                control.touched &&
+                control.errors &&
+                control.errors['required']">
+        <small>{{ errorMsg }}</small>
+      </div>
+    </ng-container>
+</div>
